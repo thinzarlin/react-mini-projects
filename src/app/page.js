@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Counter from "./pages/Counter";
 import CounterV2 from "./pages/CounterV2";
+import TemperatureConverter from "./pages/TemperatureConverter";
 
 export default function Home() {
   const [element, setElement] = useState();
@@ -24,10 +25,18 @@ export default function Home() {
         >
           Counter v2
         </button>
+        <button
+          type="button"
+          className="py-2 px-4 text-sm font-medium rounded-lg bg-blue-500 border border-blue-500 text-white hover:bg-blue-700 focus:outline-hidden focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
+          onClick={() => setElement("tempConv")}
+        >
+          Temperature Converter
+        </button>
       </div>
 
       {element == "counter" && <Counter />}
       {element == "counterV2" && <CounterV2 />}
+      {element == "tempConv" && <TemperatureConverter />}
     </main>
   );
 }
