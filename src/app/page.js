@@ -5,6 +5,7 @@ import Counter from "./pages/Counter";
 import CounterV2 from "./pages/CounterV2";
 import TemperatureConverter from "./pages/TemperatureConverter";
 import TemperatureConverterV2 from "./pages/TemperatureConverterV2";
+import CharacterCounter from "./pages/CharacterCounter";
 
 export default function Home() {
   const [element, setElement] = useState("placeholder");
@@ -66,6 +67,7 @@ export default function Home() {
               <option value="counterV2">🔢 Counter v2</option>
               <option value="tempConv">🌡️ Temperature Converter</option>
               <option value="tempConvV2">🌡️ Temperature Converter v2</option>
+              <option value="charCounter">🔤 Character Counter</option>
             </select>
             <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-gray-500">
               <svg
@@ -90,6 +92,7 @@ export default function Home() {
       {element == "counterV2" && <CounterV2 />}
       {element == "tempConv" && <TemperatureConverter />}
       {element == "tempConvV2" && <TemperatureConverterV2 />}
+      {element == "charCounter" && <CharacterCounter />}
     </main>
   );
 }
